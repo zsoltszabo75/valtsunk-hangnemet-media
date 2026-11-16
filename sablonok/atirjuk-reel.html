@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="node_modules/@fontsource/bricolage-grotesque/700.css">
+<link rel="stylesheet" href="node_modules/@fontsource/bricolage-grotesque/800.css">
+<link rel="stylesheet" href="node_modules/@fontsource/source-sans-3/400.css">
+<link rel="stylesheet" href="node_modules/@fontsource/source-sans-3/600.css">
+<link rel="stylesheet" href="node_modules/@fontsource/source-sans-3/700.css">
+<style>
+html,body{margin:0;padding:0;background:#1D2B33}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#1D2B33;font-family:'Source Sans 3',sans-serif;color:#1D2B33}
+.a{position:absolute;will-change:transform,opacity}
+.bric{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.025em;margin:0}
+#kick{left:88px;top:262px;font:700 30px/1 'Source Sans 3',sans-serif;letter-spacing:.14em;text-transform:uppercase}
+#bub{left:88px;top:370px;width:812px;box-sizing:border-box;padding:38px 40px 42px;border-radius:36px;background:#FFFFFF}
+#bub .hd{display:flex;align-items:center;gap:20px;margin-bottom:22px}
+#bub .av{width:72px;height:72px;border-radius:50%;background:#C9C4BB;flex:0 0 auto}
+#bub .nm{font:700 34px/1.1 'Source Sans 3',sans-serif;color:#1D2B33}
+#bub .tm{font:400 26px/1.2 'Source Sans 3',sans-serif;color:#5B676D;margin-top:4px}
+#bub .body{position:relative;height:200px}
+#old,#new{position:absolute;left:0;top:0;width:100%;font:600 50px/1.3 'Source Sans 3',sans-serif;color:#1D2B33;margin:0}
+.bad{background:linear-gradient(#D9553B,#D9553B) no-repeat 0 58%/0% 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+#cur{display:inline-block;width:5px;height:54px;background:#127A73;vertical-align:-8px;margin-left:3px}
+.chip{position:absolute;right:40px;top:44px;height:56px;padding:0 24px;border-radius:999px;display:flex;align-items:center;font:800 28px/1 'Bricolage Grotesque',sans-serif;letter-spacing:.06em;color:#FFFFFF}
+#chipA{background:#D9553B}
+#chipB{background:#127A73}
+#q{left:88px;top:840px;width:812px;font-size:92px;line-height:1.02;color:#F6F3EE}
+#q .em{color:#6CC4B9}
+#u{left:88px;top:840px;width:812px;font-size:62px;line-height:1.08;color:#1D2B33}
+#u .em{color:#127A73}
+#fin{left:88px;top:340px;width:812px;font-size:106px;line-height:1.0;color:#1D2B33;white-space:nowrap}
+#fin .em{color:#127A73}
+#cta{left:88px;top:820px;height:96px;padding:0 40px;border-radius:999px;background:#1D2B33;color:#FFFFFF;display:flex;align-items:center;font:800 42px/1 'Bricolage Grotesque',sans-serif;white-space:nowrap}
+#prom{left:88px;top:960px;width:812px;font:700 36px/1.25 'Bricolage Grotesque',sans-serif;color:#127A73;white-space:nowrap}
+#card{left:88px;width:812px;top:1150px;height:150px;box-sizing:border-box;padding:0 34px;border-radius:24px;background:#FFFFFF;box-shadow:inset 0 0 0 2px #D8D2C8;display:flex;align-items:center;gap:28px}
+#card .t1{font:800 36px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;color:#1D2B33}
+#card .t2{margin-top:8px;font:600 26px/1.2 'Source Sans 3',sans-serif;color:#127A73}
+.ln{fill:none;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="a" id="kick">Átírjuk · 1. rész</div>
+  <div class="a" id="bub">
+    <div class="hd"><div class="av"></div><div><div class="nm">Valaki</div><div class="tm">2 perce</div></div></div>
+    <div class="chip" id="chipA">BÁNT</div>
+    <div class="chip" id="chipB">VITÁZIK</div>
+    <div class="body">
+      <p id="old">Aki tabletet ad a gyereke kezébe, <span class="bad" id="b1">az ne nevezze magát szülőnek.</span> <span class="bad" id="b2">Szánalmas.</span></p>
+      <p id="new"><span id="typed"></span><span id="cur"></span></p>
+    </div>
+  </div>
+  <h1 class="a bric" id="q">Ugyanez<br><span class="em">emberi hangon?</span></h1>
+  <h2 class="a bric" id="u">A vélemény maradt.<br><span class="em">A bántás eltűnt.</span></h2>
+
+  <h1 class="a bric" id="fin">A véleményed<br>maradhat.<br><span class="em">A hangnem<br>cserélhető.</span></h1>
+  <div class="a" id="cta">Te is így vitáznál? Oszd meg!</div>
+  <div class="a" id="prom">Láttál egy kommentet, amit át kéne írni?<br>Küldd el üzenetben, név nélkül.</div>
+  <div class="a" id="card">
+    <svg viewBox="12 78 214 84" width="190" height="75" aria-hidden="true" style="flex:0 0 auto"><path class="ln" stroke-width="13" d="M24 120 L40 148 L58 90 L76 146 L94 96 L108 136 L120 120" stroke="#D9553B"/><path class="ln" stroke-width="13" d="M120 120 C132 101 146 101 158 120 C169 137 181 137 192 120 C198 111 207 111 214 120" stroke="#127A73"/></svg>
+    <div><div class="t1">Váltsunk hangnemet!</div><div class="t2">Vitázz, ne gyalázz! · #VáltsunkHangnemet</div></div>
+  </div>
+</div>
+<script>
+function clamp(x){return Math.max(0,Math.min(1,x));}
+function p(t,a,b){return clamp((t-a)/(b-a));}
+function eo(x){x=clamp(x);return 1-Math.pow(1-x,3);}
+function eio(x){x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;}
+function lerp(a,b,k){return a+(b-a)*k;}
+function hex(h){return [parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];}
+function mix(h1,h2,k){var a=hex(h1),b=hex(h2);return 'rgb('+a.map(function(v,i){return Math.round(lerp(v,b[i],k));}).join(',')+')';}
+function el(id){return document.getElementById(id);}
+function set(id,op,tr){var e=el(id);e.style.opacity=op;e.style.transform=tr||'none';}
+function pop(x){x=clamp(x);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);}
+var NEW="Én aggódom a sok képernyőidő miatt. Nálunk napi egy óra a szabály. Nálatok hogy működik?";
+var TA=4.35, TB=7.15;
+function render(t){
+  var bg=eio(p(t,2.0,2.5));
+  el('stage').style.background=mix('#1D2B33','#F6F3EE',bg);
+  el('kick').style.color=mix('#6CC4B9','#127A73',bg);
+  var out=1-eo(p(t,8.35,8.75));
+  set('kick',out,'none');
+  el('bub').style.boxShadow='inset 0 0 0 2px rgba(216,210,200,'+bg+')';
+  set('bub',out,'translateY('+(-10*eo(p(t,8.35,8.75)))+'px)');
+  // question on dark, fades with the background change
+  var qo=1-eo(p(t,1.95,2.3));
+  set('q',qo,'translateY('+(-30*eo(p(t,1.95,2.3)))+'px)');
+  // strikes
+  el('b1').style.backgroundSize=(100*eo(p(t,2.65,3.15)))+'% 6px';
+  el('b2').style.backgroundSize=(100*eo(p(t,3.2,3.5)))+'% 6px';
+  var redk=eo(p(t,2.65,3.0));
+  el('b1').style.color=mix('#1D2B33','#B8452F',redk);
+  el('b2').style.color=mix('#1D2B33','#B8452F',eo(p(t,3.2,3.4)));
+  // old text leaves
+  var ol=eo(p(t,3.75,4.2));
+  set('old',1-ol,'translateY('+(-24*ol)+'px)');
+  // typing
+  var n=Math.round(NEW.length*clamp((t-TA)/(TB-TA)));
+  el('typed').textContent=NEW.slice(0,Math.max(0,n));
+  var curOn=(t>=4.15&&t<8.0)&&(t<TA||t>TB?(Math.floor(t*2.2)%2===0):true);
+  el('cur').style.opacity=curOn?1:0;
+  set('new',t>=4.15?1:0,'none');
+  // chips
+  var ca=1-eo(p(t,7.3,7.5));
+  set('chipA',ca,'scale('+(1-0.2*eo(p(t,7.3,7.5)))+')');
+  var cb=p(t,7.35,7.7);
+  set('chipB',t<7.35?0:Math.min(1,cb*3),'scale('+(t<7.35?0.6:pop(cb))+')');
+  el('chipA').style.transformOrigin=el('chipB').style.transformOrigin='100% 50%';
+  // lesson line
+  var u=eo(p(t,7.65,8.05));
+  set('u',u*out,'translateY('+(1-u)*24+'px)');
+  // ending
+  var fi=eo(p(t,8.8,9.3));
+  set('fin',fi,'translateY('+(1-fi)*30+'px)');
+  var ca2=eo(p(t,9.35,9.8));
+  set('cta',ca2,'translateY('+(1-ca2)*20+'px) scale('+(0.94+0.06*pop(p(t,9.35,9.8)))+')'); el('cta').style.transformOrigin='0 50%';
+  var pr=eo(p(t,9.65,10.05));
+  set('prom',pr,'translateY('+(1-pr)*16+'px)');
+  var cd=eo(p(t,9.95,10.45));
+  set('card',cd,'translateY('+(1-cd)*50+'px)');
+}
+render(0);
+</script>
+</body>
+</html>
